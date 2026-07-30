@@ -2,6 +2,8 @@
 
 # `TPD` - Touchpad
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/0x007E/tpd)
+
 The `TPD` is a board with six single pads that are connected to a [AT42QT1070](#additional-information) touch sensor. The touch sensor can be connected to any microntroller over `TWI`. The board itself can be driven with a voltage from `1V8-5V` and controlled over the [AT42QTXXXX driver library](https://github.com/0x007E/drivers-touch-at42qtxxxx).
 
 | Experience  | Level                                                                               |
