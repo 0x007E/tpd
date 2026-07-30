@@ -21,12 +21,16 @@ globals:
 preflight:
   check_zone_fills: true
   fill_zones: true
-  run_erc: true
-  run_drc: true
-  filters:
+
+  erc:
+    enabled: true
+  drc:
+    enabled: true
+    filters:
     - filter: 'Items not allowed \(keepout area\)'
       error: 'items_not_allowed'
       regex: 'Items not allowed \(keepout area\)'
+  
   set_text_variables:
     - name: 'date'
       command: 'date +%d.%m.%Y'
@@ -37,6 +41,7 @@ outputs:
     type: bom
     dir: './bom'
     options: &bom_options
+      output: 'bom.%x'
       xlsx:
         datasheet_as_link: MFP
         max_col_width: 40
@@ -46,29 +51,40 @@ outputs:
         - References
         - Value
         - Footprint
-        - field: Vendor
-          name: Vendor
-        - field: VendorId
-          name: VendorId
+        - field: HTL
+          name: HTL
         - Quantity Per PCB
       normalize_values: true
+
+  - name: 'ibom'
+    comment: 'Interactive HTML BoM'
+    type: ibom
+    dir: './ibom'
+    options:
+      output: 'ibom.%x'
+      layer_view: 'FB'
+      # bom_view: 'left-right'
+      bom_view: 'top-bottom'
+      include_tracks: false
+      show_fields: 'Value,Footprint,HTL'
 
   - name: 'print_sch'
     comment: 'Schematic PDF'
     type: pdf_sch_print
     dir: './schematic'
     options:
+      output: 'schematic.%x'
       monochrome: true
 
-  - name: print_pdf_top
-    comment: 'PCB PDF TOP'
+  - name: print_pcb
+    comment: 'PCB to PDF'
     type: pcb_print
     dir: './pcb'
     options:
       force_edge_cuts: true
       keep_temporal_files: false
       format: 'PDF'
-      output : 'PCB.%x'
+      output : 'pcb.%x'
       plot_sheet_reference: true
       scaling: 2.0
       pages:
@@ -94,8 +110,7 @@ outputs:
           mirror: false
           monochrome: true
           mirror: true
-        - layers:
-          - layer: F.Fab
+        - layers: [ F.Fab, User.Drawings2 ]
           sheet: '(Top Fabrication)'
           mirror: false
           monochrome: true
@@ -136,9 +151,21 @@ outputs:
     type: excellon
     dir: './drill'
     options:
+      output: 'drill.%x'
       map:
+        output: 'drill.%x'
         type: pdf
       pth_and_npth_single_file: true
+      
+  - name: mechanical
+    comment: "3D export (STEP)"
+    type: export_3d
+    dir: './step'
+    options:
+      format: 'step'
+      output: '%f-%i%I%v.%x'
+      download: true
+      no_virtual: true
 
   # - name: board_top_filled
   #   comment: "Top layer view with components"
@@ -158,8 +185,3 @@ outputs:
   #     dpi: 300
   #     bottom: true
   #     show_components: all
-      
-  - name: mechanical
-    comment: "STEP model"
-    type: step
-    dir: './step'
