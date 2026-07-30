@@ -2,7 +2,7 @@
 
 # `TPD` - Touchpad
 
-The `TPD` is a board with six singled pads that are connected to a [AT42QT1070](#additional-information) touch sensor. The touch sensor can be connected to any microntroller over `TWI`. The board itself can be driven with a voltage from `1V8-5V` and controlled over the [AT42QTXXXX driver library](https://github.com/0x007E/drivers-touch-at42qtxxxx).
+The `TPD` is a board with six single pads that are connected to a [AT42QT1070](#additional-information) touch sensor. The touch sensor can be connected to any microntroller over `TWI`. The board itself can be driven with a voltage from `1V8-5V` and controlled over the [AT42QTXXXX driver library](https://github.com/0x007E/drivers-touch-at42qtxxxx).
 
 | Experience  | Level                                                                               |
 |:------------|:-----------------------------------------------------------------------------------:|
@@ -15,7 +15,8 @@ The `TPD` is a board with six singled pads that are connected to a [AT42QT1070](
 | Schematic | [pdf](https://github.com/0x007E/tpd/releases/latest/download/schematic.pdf) / [cadlab](https://cadlab.io/project/30134/main/files)                   | Schematic files |
 | Board     | [pdf](https://github.com/0x007E/tpd/releases/latest/download/pcb.pdf) / [cadlab](https://cadlab.io/project/30134/main/files)                         | Board file      |
 | Drill     | [pdf](https://github.com/0x007E/tpd/releases/latest/download/drill.pdf)                                                                              | Drill file      |
-| PCB       | [zip](https://github.com/0x007E/tpd/releases/latest/download/kicad.zip) / [tar](https://github.com/0x007E/tpd/releases/latest/download/kicad.tar.gz) | KiCAD/Gerber/BoM/Drill files |
+| BoM | [xlsx](https://github.com/0x007E/tpd/releases/latest/download/bom.xlsx) / [html](https://github.com/0x007E/tpd/releases/latest/download/ibom.html)          | Bill of Material as Excel/interactive HTML |
+| PCB    | [zip](https://github.com/0x007E/tpd/releases/latest/download/kicad.zip) / [tar](https://github.com/0x007E/tpd/releases/latest/download/kicad.tar.gz)    | KiCAD/Gerber/BoM/Drill files       |
 
 # Hardware
 
@@ -23,7 +24,7 @@ The pcb is created with `KiCAD`. All files are built with `github actions` so th
 
 ## PCB
 
-The circuit board is populated on one side (Top). The best way for soldering the `SMD` components is within a vapor phase soldering system and a standard soldering system. After placing and soldering the top parts.
+The circuit board is populated on one side (Bottom). The best way for soldering the `SMD` components is within a vapor phase soldering system.
 
 ### Top Layer
 
