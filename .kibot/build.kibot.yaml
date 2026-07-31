@@ -86,7 +86,7 @@ outputs:
       format: 'PDF'
       output : 'pcb.%x'
       plot_sheet_reference: true
-      scaling: 2.0
+      scaling: 1.75
       pages:
         - layers:
           - layer: F.Cu
@@ -110,18 +110,18 @@ outputs:
           mirror: false
           monochrome: true
           mirror: true
-        - layers: [ F.Fab, User.Drawings2 ]
-          sheet: '(Top Fabrication)'
-          mirror: false
-          monochrome: true
         - layers:
           - layer: B.Fab
           sheet: '(Bottom Fabrication)'
           mirror: false
           monochrome: true
           mirror: true
-        - layers: [ F.Silkscreen, User.Drawings ]
+        - layers: [ F.Silkscreen, User.Drawings2 ]
           sheet: '(Top Drawings)'
+          mirror: false
+          monochrome: true
+        - layers: [ B.Fab, User.Drawings ]
+          sheet: '(Bottom Drawings)'
           mirror: false
           monochrome: true
         # - layers: [ B.Silkscreen, User.Drawings ]
