@@ -20,7 +20,7 @@ The `TPD` is a board with six single pads that are connected to a [AT42QT1070](#
 | Drill     | [pdf](https://github.com/0x007E/tpd/releases/latest/download/drill.pdf)                                                                              | Drill file      |
 | BoM | [xlsx](https://github.com/0x007E/tpd/releases/latest/download/bom.xlsx) / [html](https://github.com/0x007E/tpd/releases/latest/download/ibom.html)          | Bill of Material as Excel/interactive HTML |
 | PCB    | [zip](https://github.com/0x007E/tpd/releases/latest/download/kicad.zip) / [tar](https://github.com/0x007E/tpd/releases/latest/download/kicad.tar.gz)    | KiCAD/Gerber/BoM/Drill files       |
-| Mechanical | [zip](https://github.com/0x007E/rcl/releases/latest/download/freecad.zip) / [tar](https://github.com/0x007E/rcl/releases/latest/download/freecad.tar.gz) | FreeCAD/Housing and PCB (STEP/STL) files     |
+| Mechanical | [zip](https://github.com/0x007E/tpd/releases/latest/download/freecad.zip) / [tar](https://github.com/0x007E/tpd/releases/latest/download/freecad.tar.gz) | FreeCAD/Housing and PCB (STEP/STL) files     |
 
 # Hardware
 
