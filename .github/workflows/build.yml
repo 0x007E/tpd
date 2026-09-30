@@ -45,7 +45,7 @@ jobs:
 
   export-freecad:
     env:
-      FREECAD_VERSION: "1.1.1"
+      FREECAD_VERSION: "1.1.4"
       FREECAD_FILENAME: "./mechanical/housing.FCStd"
       FREECAD_OUTPUT_FOLDER: "./output"
       FREECAD_PARTTYPE: "PartDesign::Body"
